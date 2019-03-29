@@ -1,0 +1,48 @@
+<div class="container col-xs-12 col-md-6 col-md-offset-3">
+  <div class="row">
+    <div class="col-xs-10">
+      <input
+        id="searchText"
+        type="text"
+        class="form-control"
+        placeholder="search"
+        name="searchText"
+      />
+    </div>
+    <div class="col-xs-2">
+      <button class="btn btn-primary">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="btn btn-primary" (click)="onGotoFoodClick()">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+  <div class="row" style="padding-top:20px">
+    <div class="col-xs-12">
+      <table class="table table-bordered table-hover table-center">
+        <tbody>
+          <tr *ngFor="let food of (foodlist | async)">
+            <td>
+              <img />
+            </td>
+            <td>
+              {{ food.name }}
+            </td>
+            <td>{{ food.cal }} kcal.</td>
+            <td>
+              <button class="btn btn-primary" (click)="onEditFoodClick(food)">
+                <i class="fas fa-edit"></i>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-primary">
+                <i class="fas fa-check" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

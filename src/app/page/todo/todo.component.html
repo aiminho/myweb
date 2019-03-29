@@ -1,0 +1,23 @@
+<p class="form-text text-muted">
+  {{ isAuthDev }}
+</p>
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Id</th>
+      <th>User Id</th>
+      <th>Title</th>
+      <th>Completed</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of (todos | async)">
+        <td scope="row">{{ todo.id }}</td>
+        <td scope="row">{{ todo.userId }}</td>
+        <td scope="row">{{ todo.title }}</td>
+        <td scope="row">
+          {{ todo.completed }}
+        </td>
+      </tr>
+    </tbody>
+</table>

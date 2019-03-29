@@ -1,0 +1,36 @@
+<!-- Nav tabs -->
+<h2>{{ title }}</h2>
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link" (click)="onGotoPage('home')">My Fitness</a>
+    <!-- <a
+      class="nav-item nav-link"
+      (click)="onGotoPage('admin/todos')"
+      *ngIf="!canActivate"
+      >Todos</a
+    > -->
+    <!-- <a class="nav-item nav-link" (click)="onGotoPage('admin/todos')">Todos</a> -->
+    <!-- <a class="nav-item nav-link" (click)="onGotoPage('intro')">Intro</a> -->
+    <a
+      class="nav-item nav-link"
+      (click)="onGotoPage('admin/calories')"
+      *ngIf="!canActivate"
+      >Calories</a
+    >
+    <a
+      class="nav-item nav-link"
+      (click)="onGotoPage('login')"
+      *ngIf="!canActivate"
+      >Sign In</a
+    >
+    <a
+      class="nav-item nav-link"
+      (click)="onGotoPage('admin/profile')"
+      *ngIf="!canActivate"
+      >Profile</a
+    >
+    <a class="nav-item nav-link" (click)="onSignOutClick()" *ngIf="!canActivate"
+      >Sign Out</a
+    >
+  </div>
+</nav>

@@ -1,0 +1,97 @@
+<div class="container col-12 col-sm-6 col-md-4 col-md-offset-4 bg-krungthai">
+  <div class="row">
+    <form class="col-12" #f="ngForm" (submit)="onLoginSubmit(f)">
+      <div class="form-group">
+        <label for="userEmail">Email address</label>
+        <input
+          id="userEmail"
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          name="userEmail"
+          required
+          ngModel
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="userPassword">Password</label>
+        <input
+          id="userPassword"
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          name="userPassword"
+          required
+          ngModel
+        />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary col-12">Login</button>
+      </div>
+      <div class="form-group" style="padding-top:50px">
+        <button
+          type="button"
+          [routerLink]="['/register']"
+          class="btn btn-link pull-right"
+        >
+          Register new user
+        </button>
+      </div>
+    </form>
+  </div>
+  <hr />
+  <div class="row">
+    <i class="fab fa-google"></i>
+    <div class="form-group social-btn">
+      <button
+        type="submit"
+        class="btn btn-default col-12"
+        (click)="onThirdPartySingInClick('google')"
+      >
+        Google
+      </button>
+    </div>
+    <i class="fab fa-facebook-f"></i>
+    <div class="form-group social-btn">
+      <button
+        type="submit"
+        class="btn btn-default col-12"
+        (click)="onThirdPartySingInClick('facebook')"
+      >
+        Facebook
+      </button>
+    </div>
+    <i class="fab fa-twitter"></i>
+    <div class="form-group social-btn">
+      <button
+        type="submit"
+        class="btn btn-default col-12"
+        (click)="onThirdPartySingInClick('twitter')"
+      >
+        Twitter
+      </button>
+    </div>
+    <i class="fab fa-github"></i>
+    <div class="form-group social-btn">
+      <button
+        type="submit"
+        class="btn btn-default col-12"
+        (click)="onThirdPartySingInClick('github')"
+      >
+        Github
+      </button>
+    </div>
+    <div class="form-group social-btn">
+      <button
+        type="button"
+        [routerLink]="['/login-with-phone']"
+        class="btn btn-info col-12"
+        (click)="onThirdPartySingInClick('phone')"
+      >
+        Phone
+      </button>
+    </div>
+  </div>
+</div>

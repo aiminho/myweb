@@ -1,0 +1,25 @@
+<div class="container" *ngIf="showContent">
+  <h4>
+    <a [href]="url" class="badge badge-primary">{{ title }}</a>
+  </h4>
+  <button type="button" class="btn btn-primary" (click)="onBtnGotoClick()">
+      call onBtnGotoClick
+  </button>
+</div>
+<button type="button" class="btn btn-primary" (click)="onToggleClick()">
+    {{ showContent? 'Hide' : 'Show' }}(*ngIf="showContent")
+</button>
+<ul class="list-group">
+  <li class="list-group-item"
+    *ngFor="let item of list; let idx = index"
+    [ngClass]="{ active: item.id == 2, 'list-group-item-warning': item.id > 3 }">
+      {{ item.id }} - {{ item.desc }} (index {{ idx }})
+  </li>
+</ul>
+<button class="btn btn-primary" (click)="onAddList()">add ghost poing</button>
+<hr>
+<div class="alert alert-primary" role="alert" [ngSwitch]="conditionExpression">
+  <ng-template [ngSwitchCase]="case1Exp"><strong>One</strong></ng-template>
+  <ng-template ngSwitchCase="B"><strong>Two</strong></ng-template>
+  <ng-template ngSwitchDefault><strong>Three</strong></ng-template>
+</div>
